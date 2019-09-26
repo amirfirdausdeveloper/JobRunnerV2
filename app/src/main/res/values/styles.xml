@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- THEME WITH ACTION BAR -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- THEME NO ACTION BAR -->
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorJR</item>
+        <item name="colorPrimaryDark">@color/colorJR</item>
+        <item name="colorAccent">@color/colorFont</item>
+    </style>
+
+    <!-- THEME FOR DIALOG NOT INTERNET CONNECTION -->
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorFont</item>
+    </style>
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorFont</item>
+    </style>
+    <!-- END THEME FOR DIALOG NOT INTERNET CONNECTION -->
+
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Job Runner</string>
+
+    <!--SPLASHSCREEN WORD-->
+    <string name="no_network_notification">Network currently not available. Please try again later</string>
+    <string name="try_again">Try Again</string>
+    <string name="exit">Exit</string>
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1014673134116",
+    "firebase_url": "https://jobrunner-6be88.firebaseio.com",
+    "project_id": "jobrunner-6be88",
+    "storage_bucket": "jobrunner-6be88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014673134116:android:e32df8b243714a646a7eb1",
+        "android_client_info": {
+          "package_name": "com.jobrunner.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014673134116-sjfqpafl9omt6v8a9vvkflt0qqkm80pr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jobrunner.app",
+            "certificate_hash": "9da5b59b945eb4518b07740f2f5fa0f221c94788"
+          }
+        },
+        {
+          "client_id": "1014673134116-o39ig09ihmq3leo543ja5v75vc1pqirg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3Pe-uVKX70S_jNcIxRndjpG7NBckLfnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014673134116-o39ig09ihmq3leo543ja5v75vc1pqirg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
