@@ -131,7 +131,7 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
     }
 
     /*-----------------------------GETVERSION APPS FUNCTION ---------------------------------------------*/
-    void getVersion(){
+    public void getVersion(){
         NukeSSLCerts.nuke();
         class AsyncTaskRunner extends AsyncTask<String, String, JSONObject> {
             @Override
@@ -155,8 +155,8 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
                             handler.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                //                Intent next = new Intent(getApplicationContext(), IntroductionActivity.class);
-                //                startActivity(next);
+//                                    Intent next = new Intent(getApplicationContext(), IntroductionActivity.class);
+//                                    startActivity(next);
                                     }
                                 }, 3500);
                         }else{
@@ -182,7 +182,7 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
     }
 
     /*-----------------------------ALL DIALOG FUNCTION ---------------------------------------------*/
-    void dialogUnderMaintance(String message){
+    public void dialogUnderMaintance(String message){
         AlertDialog alertDialog = new AlertDialog.Builder(SplashScreenActivity.this, R.style.AlertDialogTheme)
                 .setMessage(message)
                 .setCancelable(false)
@@ -195,7 +195,7 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
                 }).show();
     }
 
-    void dialogPromptError(String message){
+    public void dialogPromptError(String message){
         AlertDialog alertDialog = new AlertDialog.Builder(SplashScreenActivity.this, R.style.AlertDialogTheme)
                 .setMessage(message)
                 .setCancelable(false)
@@ -215,7 +215,7 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
                 }).show();
     }
 
-    void dialogUpdateApps(String message){
+    public void dialogUpdateApps(String message){
         AlertDialog alertDialog = new AlertDialog.Builder(SplashScreenActivity.this, R.style.AlertDialogTheme)
                 .setMessage(message)
                 .setCancelable(false)
