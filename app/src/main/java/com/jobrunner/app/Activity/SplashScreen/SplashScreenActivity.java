@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -16,6 +17,7 @@ import com.jobrunner.app.BuildConfig;
 import com.jobrunner.app.Common.NetworkStateReceiver;
 import com.jobrunner.app.Connection.NukeSSLCerts;
 import com.jobrunner.app.Connection.UrlLink;
+import com.jobrunner.app.MainActivity;
 import com.jobrunner.app.R;
 
 import org.json.JSONException;
@@ -75,8 +77,12 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
 
         //IF NETWORK ONLINE  NETWORK = 1 (ONLINE) , NETWORK = 0 (OFFLINE)
         if(network == 1){
-            //GET APPS VERSION FROM DATABASE
-            getVersion();
+            //TU CHECK VERSION OF PHONE
+            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
+                dialogVersion();
+            }else{
+                getVersion(); //GET APPS VERSION FROM DATABASE
+            }
         }
     }
 
@@ -181,6 +187,20 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
         new AsyncTaskRunner().execute();
     }
 
+    /*-----------------------------LAUNCH PLAYSTORE FUNCTION ---------------------------------------------*/
+    public void launchPlayStore(Context context, String packageName) {
+        packageName = "com.bateriku.customer";
+        Intent intent = null;
+        try {
+            intent = new Intent(Intent.ACTION_VIEW);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setData(Uri.parse("market://details?id=" + packageName));
+            context.startActivity(intent);
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + packageName)));
+        }
+    }
+
     /*-----------------------------ALL DIALOG FUNCTION ---------------------------------------------*/
     public void dialogUnderMaintance(String message){
         AlertDialog alertDialog = new AlertDialog.Builder(SplashScreenActivity.this, R.style.AlertDialogTheme)
@@ -230,17 +250,18 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
                 }).show();
     }
 
-    /*-----------------------------LAUNCH PLAYSTORE FUNCTION ---------------------------------------------*/
-    public void launchPlayStore(Context context, String packageName) {
-        packageName = "com.bateriku.customer";
-        Intent intent = null;
-        try {
-            intent = new Intent(Intent.ACTION_VIEW);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setData(Uri.parse("market://details?id=" + packageName));
-            context.startActivity(intent);
-        } catch (android.content.ActivityNotFoundException anfe) {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + packageName)));
-        }
+    public void dialogVersion(){
+        new AlertDialog.Builder(SplashScreenActivity.this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Device not compatible")
+                .setMessage("Sorry your phone version is not supported for JobRunner")
+                .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        finish();
+                    }
+                })
+                .show();
     }
 }
