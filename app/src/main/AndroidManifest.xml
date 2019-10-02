@@ -17,7 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Login.LoginActivity"></activity>
+
+        <activity android:name=".Activity.Introduction.IntroductionActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Activity.Login.LoginActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity.SplashScreen.SplashScreenActivity"
             android:screenOrientation="portrait">
@@ -27,7 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"

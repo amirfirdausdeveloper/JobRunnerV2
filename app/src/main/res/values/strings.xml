@@ -5,4 +5,10 @@
     <string name="no_network_notification">Network currently not available. Please try again later</string>
     <string name="try_again">Try Again</string>
     <string name="exit">Exit</string>
+
+    <!--//FOR INTRO SCREEN-->
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="done">DONE</string>
+    <string name="okay">OKAY</string>
 </resources>

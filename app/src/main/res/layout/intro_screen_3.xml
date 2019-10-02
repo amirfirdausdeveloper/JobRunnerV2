@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="75dp"
-            app:srcCompat="@drawable/icon_introduction_nearby" />
+            app:srcCompat="@drawable/icon_introduction_start" />
     </LinearLayout>
 
     <LinearLayout
@@ -31,7 +31,7 @@
             android:id="@+id/textView_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nearby Location"
+            android:text="Start Working"
             android:gravity="center"
             android:textSize="20sp"
             android:layout_marginBottom="5dp"
@@ -41,7 +41,7 @@
             android:id="@+id/textView_child"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Searching part time job nearby location"
+            android:text="Start working as soon as possible as part timer"
             android:gravity="center"
             android:textSize="14sp"
             android:textColor="@android:color/black"/>

@@ -8,4 +8,24 @@
     <color name="colorFont">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWhiteGray">#EEEEEE</color>
+
+    <!-- FOR INTRODUCTION-->
+    <array name="array_active">
+        <item>@color/colorJR</item>
+        <item>@color/colorJR</item>
+        <item>@color/colorJR</item>
+        <item>@color/colorJR</item>
+    </array>
+
+    <color name="dot_inactive_06">#e0e0e0</color>
+    <color name="dot_inactive_07">#e0e0e0</color>
+    <color name="dot_inactive_08">#e0e0e0</color>
+    <color name="dot_inactive_09">#e0e0e0</color>
+    <color name="scanner_line">#000000</color>
+    <array name="array_inactive">
+        <item>@color/dot_inactive_06</item>
+        <item>@color/dot_inactive_07</item>
+        <item>@color/dot_inactive_08</item>
+        <item>@color/dot_inactive_09</item>
+    </array>
 </resources>

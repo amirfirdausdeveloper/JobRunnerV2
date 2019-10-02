@@ -12,7 +12,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
+import com.jobrunner.app.Activity.Introduction.IntroductionActivity;
 import com.jobrunner.app.BuildConfig;
 import com.jobrunner.app.Common.NetworkStateReceiver;
 import com.jobrunner.app.Connection.NukeSSLCerts;
@@ -39,7 +41,6 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
     }
-
 
     /*-----------------------------ON START FUNCTION ---------------------------------------------*/
     @Override
@@ -75,15 +76,24 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
         this.registerReceiver(networkStateReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
         mContext = getApplicationContext();
 
-        //IF NETWORK ONLINE  NETWORK = 1 (ONLINE) , NETWORK = 0 (OFFLINE)
-        if(network == 1){
-            //TU CHECK VERSION OF PHONE
-            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
-                dialogVersion();
-            }else{
-                getVersion(); //GET APPS VERSION FROM DATABASE
+        Handler handlers = new Handler();
+        handlers.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                //IF NETWORK ONLINE  NETWORK = 1 (ONLINE) , NETWORK = 0 (OFFLINE)
+                if(network == 1){
+                    //TU CHECK VERSION OF PHONE
+                    if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
+                        dialogVersion();
+                    }else{
+                        getVersion(); //GET APPS VERSION FROM DATABASE
+                    }
+                }
+
             }
-        }
+        }, 1500);
+
     }
 
     /*-----------------------------NETWORK AVAILABLE FUNCTION ---------------------------------------------*/
@@ -161,8 +171,8 @@ public class SplashScreenActivity extends AppCompatActivity implements NetworkSt
                             handler.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-//                                    Intent next = new Intent(getApplicationContext(), IntroductionActivity.class);
-//                                    startActivity(next);
+                                    Intent next = new Intent(getApplicationContext(), IntroductionActivity.class);
+                                    startActivity(next);
                                     }
                                 }, 3500);
                         }else{
